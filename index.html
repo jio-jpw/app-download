@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Download New JPW</title>
+  <title>App Downloads</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -11,8 +11,10 @@
       --text: #171717;
       --muted: #62645f;
       --button: #115e59;
+      --button-alt: #334155;
       --button-text: #ffffff;
       --line: #d8d8d2;
+      --card: #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -21,8 +23,10 @@
         --text: #f2f4f0;
         --muted: #a9ada6;
         --button: #2dd4bf;
+        --button-alt: #94a3b8;
         --button-text: #06201d;
         --line: #2d302e;
+        --card: #181b19;
       }
     }
 
@@ -42,7 +46,7 @@
     }
 
     main {
-      width: min(100%, 440px);
+      width: min(100%, 560px);
       display: grid;
       gap: 22px;
       text-align: center;
@@ -50,7 +54,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 8vw, 3.8rem);
+      font-size: clamp(2rem, 8vw, 3.5rem);
       line-height: 0.95;
       font-weight: 760;
       letter-spacing: 0;
@@ -61,6 +65,36 @@
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.5;
+    }
+
+    .apps {
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .app {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+    }
+
+    .app h2 {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .app p {
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      display: grid;
+      gap: 10px;
     }
 
     a {
@@ -78,24 +112,44 @@
       box-shadow: 0 12px 28px rgb(0 0 0 / 14%);
     }
 
+    .secondary {
+      background: var(--button-alt);
+    }
+
     a:focus-visible {
       outline: 3px solid var(--text);
       outline-offset: 4px;
     }
 
     .meta {
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>LATEST JPW 👇</h1>
-    <p> HACK</p>
-    <a href="app.apk" download>Download</a>
-    <p class="meta">JPWV7</p>
+    <h1>App Downloads</h1>
+    <p>Download the latest available APKs.</p>
+    <section class="apps" aria-label="Available apps">
+      <article class="app">
+        <div>
+          <h2>JPWNetwork</h2>
+          <p class="meta">Version V7</p>
+        </div>
+        <div class="actions">
+          <a href="app.apk" download>Download JPWNetwork</a>
+        </div>
+      </article>
+      <article class="app">
+        <div>
+          <h2>mHere Pro</h2>
+          <p class="meta">Version V1</p>
+        </div>
+        <div class="actions">
+          <a class="secondary" href="mhere-pro.apk" download>Download mHere Pro</a>
+        </div>
+      </article>
+    </section>
   </main>
 </body>
 </html>
